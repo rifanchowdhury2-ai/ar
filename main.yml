@@ -15,3 +15,25 @@ jobs:
 
       - name: Hello
         run: echo "Hello World"
+name: GitHub Actions Test
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Show Files
+        run: ls
+
+      - name: Success Message
+        run: echo "Workflow Running Successfully 🚀"
